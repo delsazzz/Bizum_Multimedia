@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -83,7 +84,7 @@ fun PantallaPrincipalBizum (modifier: Modifier = Modifier) {
         )
         // Spacer agregar un espacio entre la imagen y el botón
         Spacer(
-            modifier = Modifier.height(50.dp)
+            modifier = Modifier.height(5.dp)
         )
         // Llamada a la función para el cuadro de texto donde añadiremos los contactos
         NombreContactoField()
@@ -92,7 +93,7 @@ fun PantallaPrincipalBizum (modifier: Modifier = Modifier) {
         )
         ImporteField()
         Spacer(
-            modifier = Modifier.height(50.dp)
+            modifier = Modifier.height(30.dp)
         )
         // Función botón para añadirlo
         Button(
@@ -108,7 +109,7 @@ fun PantallaPrincipalBizum (modifier: Modifier = Modifier) {
         // Este bucle ejecuta el texto si pulsamos el botón porque enviado está definido como true
         if (enviado) {
             Spacer(
-                modifier = Modifier.height(100.dp)
+                modifier = Modifier.height(10.dp)
             )
             // Texto que aparece cuando pulsamos el botón de enviar
             Text(
@@ -129,8 +130,8 @@ fun NombreContactoField(){
         onValueChange = {nombre = it},
         label = {Text("Nombre del contacto")},
         placeholder = {Text("Seleccionar contacto...")},
-        singleLine = true
-
+        singleLine = true,
+        shape = RoundedCornerShape(16.dp) // Esto nos permite redondear el cuadro de texto
     )
 }
 
@@ -145,6 +146,7 @@ fun ImporteField(){
         label = {Text("Importe")},
         placeholder = {Text("0,00€")},
         singleLine = true,
+        shape = RoundedCornerShape(16.dp),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number) // Esto permite que el teclado que aparezca sea solo numérico
     )
 }
