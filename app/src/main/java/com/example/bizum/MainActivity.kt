@@ -34,7 +34,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.bizum.ui.theme.BizumTheme
 
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +77,7 @@ fun PantallaPrincipalBizum (modifier: Modifier = Modifier) {
     ) {
         // Función imagen para añadirla
         Image(
-            painter = painterResource(R.drawable.logo_bizum_sin_fondo), // Añadir la imagen
+            painter = painterResource(R.drawable.logo_bizum_rjd_sin_fondo), // Añadir la imagen
             contentDescription = "Logo de la aplicación", // Agregar una descripción del contenido de la imagen
             modifier = Modifier.height(150.dp).width(150.dp) // Ajustar tamaño de la imagen
         )
@@ -131,6 +130,7 @@ fun NombreContactoField(){
         label = {Text("Nombre del contacto")},
         placeholder = {Text("Seleccionar contacto...")},
         singleLine = true
+
     )
 }
 
@@ -148,4 +148,3 @@ fun ImporteField(){
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number) // Esto permite que el teclado que aparezca sea solo numérico
     )
 }
-
